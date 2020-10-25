@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181818;
+  font-family: "Commissioner", "Helvetica", "Segoe UI", sans-serif;
+}
+
+body *:focus {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-offset: 2px;
+  outline-color: #fff;
+}
+
+main {
+  margin: 0 auto 0 auto;
+  width: 62.8%;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+p {
+  font-family: "Inter";
+
+}

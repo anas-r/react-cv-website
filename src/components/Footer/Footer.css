@@ -1,0 +1,13 @@
+footer {
+    --footer-height: calc(90px*0.618);
+    height: var(--footer-height);
+    display: flex;
+    width: 100%;
+    margin-top: calc(0.618*var(--footer-height));
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer::after {
+    content: 'Work In Progress';
+    margin: auto;
+}

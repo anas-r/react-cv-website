@@ -1,0 +1,35 @@
+.cv-section {
+    margin-top: 55px;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: default;
+}
+
+.cv-section-title {
+    padding-top: 5px;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(
+        90deg,
+        rgb(60, 138, 145) 0%,
+        rgb(255, 255, 255) 50%,
+        rgb(60, 138, 145) 100%
+      );
+    background-clip: text;
+    background-size: 500%;
+    -webkit-text-fill-color: transparent; 
+}
+
+.cv-section-title:hover::after {
+    content: ' >';
+}
+
+@media only screen and (max-width: 1500px) {
+    .cv-section::before {
+        content: '';
+        margin-top: -225px;
+        padding-top: 225px;
+        display: block;
+    }
+}

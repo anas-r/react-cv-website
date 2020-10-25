@@ -1,0 +1,54 @@
+.introduction {
+    display: flex;
+    color: #fff;
+    padding-top: 125px;
+    padding-left: 15px;
+    cursor: default;
+}
+
+.introduction img {
+    border-radius: 150px;
+}
+
+.introduction section {
+    margin: auto 35px auto 35px;
+    line-height: 1.5;
+}
+
+.introduction header {
+    margin-bottom: 5px;
+    margin-left: -25px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(
+        90deg,
+        rgb(60, 138, 145) 0%,
+        rgb(255, 255, 255) 50%,
+        rgb(60, 138, 145) 100%
+      );
+    background-clip: text;
+    background-size: 500%;
+    -webkit-text-fill-color: transparent;
+}
+
+.introduction header:hover::after {
+ content:' !';
+
+} 
+
+@media only screen and (max-width: 1500px) {
+    .introduction {
+    padding-top: 235px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .introduction {
+        flex-direction: column;
+    }
+
+    .introduction > img {
+        margin-bottom: 25px;
+    }
+}
