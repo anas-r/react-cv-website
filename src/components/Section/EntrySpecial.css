@@ -1,14 +1,48 @@
 #i05 > div {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #i05 .entry-card-more {
-    border-radius: 25px;
+  border-radius: 25px;
+  flex-grow: 1;
 }
 
-@media only screen and (max-width: 1500px) {
-    #i05 > div {
-        grid-template-columns: repeat(2,1fr);
-    }
+/* compétences majeures */
+
+#i03 > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.7fr 0.3fr 1fr;
+}
+
+@media only screen and (min-width: 900px) {
+  #i030 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  #i031 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #i032 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  #i032 {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  #i03 > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }

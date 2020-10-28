@@ -1,13 +1,15 @@
 .entry-card {
+    display: flex;
+    flex-direction: column;
     border-radius: 25px;
     margin: 25px 15px 0 15px;
-    height: "100%";
 }
 
 .entry-card-main {
     border-radius: 25px 25px 0 0;
     background: rgba(75, 172, 181, 1);
     padding: 17px 20px;
+    flex-grow: 1;
 }
 
 .entry-card-more {
@@ -16,14 +18,36 @@
     font-size: 0.95rem;
     background: #E6FFFA;
     color: #234E52;
-    height: "100%";
 }
 
 .entry-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.entry-title > button {
+    display: flex;
+    border: none;
+    border-radius: 15px;
+    transform: translate(5px,-5px);
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.entry-title > button > * {
+    margin: auto;
+    color: #234E52;
+}
+
+
+.entry-title-title {
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 10px;
     text-transform: uppercase;
+    transform: translate(0,2px);
 }
 
 .entry-card-est {
@@ -39,6 +63,8 @@
 .entry-description {
     line-height: 1.3;
     font-weight: 500;
+    width: 95%;
+    transform-origin: top;
 }
 
 .entry-card-kw {

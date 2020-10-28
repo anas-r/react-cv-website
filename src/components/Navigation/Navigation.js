@@ -1,43 +1,35 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { ImGithub } from "react-icons/im";
 import { ImLinkedin } from "react-icons/im";
+import { Link } from "react-scroll";
 import "./Navigation.css";
 
-const Button = ({ label, id, currentSectionId, handleClick }) => {
+const Button = ({ label, id }) => {
   return (
-    <motion.a
-      className={
-        id === currentSectionId ? "nav-button-clicked" : "nav-button-unclicked"
-      }
-      href={`/#${id}`}
-      onClick={handleClick}
-      whileTap={{ scale: 1.1 }}
+    <Link
+      activeClass="nav-button-clicked"
+      className="nav-button-unclicked"
+      to={id}
+      spy={true}
+      smooth={true}
+      duration={500}
     >
       {label}
-    </motion.a>
+    </Link>
   );
 };
 
-const Bar = ({ name, sections, links, currentSection, onChangeSection }) => {
+const Bar = ({ name, sections, links }) => {
   return (
     <motion.nav>
       <Name name={name} />
       <motion.div className="nav-sections">
         {sections.map((sect) => (
-          <Button
-            label={sect.title}
-            key={sect.id}
-            id={sect.id}
-            currentSectionId={currentSection}
-            handleClick={() => onChangeSection(sect.id)}
-          />
+          <Button label={sect.title} key={sect.id} id={sect.id} />
         ))}
       </motion.div>
-      <SocialMediaLinks
-        github={links.github}
-        linkedin={links.linkedin}
-      />
+      <SocialMediaLinks github={links.github} linkedin={links.linkedin} />
       <ProgressBar />
     </motion.nav>
   );
@@ -89,8 +81,8 @@ const SocialMediaLinks = ({ github, linkedin }) => {
 const ProgressBar = () => {
   return (
     <motion.div
-    className="nav-progress-bar"
-      style={{scaleX: useViewportScroll().scrollYProgress }}
+      className="nav-progress-bar"
+      style={{ scaleX: useViewportScroll().scrollYProgress }}
     ></motion.div>
   );
 };

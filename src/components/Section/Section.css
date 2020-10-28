@@ -1,8 +1,19 @@
 .cv-section {
-    margin-top: 55px;
     margin-left: 25px;
     margin-right: 25px;
     cursor: default;
+}
+
+.cv-section::before {
+    content: '';
+    display: block;
+}
+
+.cv-section::after{
+    content: '';
+    margin-bottom: 90px;
+    padding-bottom: -180px;
+    display: block;
 }
 
 .cv-section-title {
@@ -23,13 +34,4 @@
 
 .cv-section-title:hover::after {
     content: ' >';
-}
-
-@media only screen and (max-width: 1500px) {
-    .cv-section::before {
-        content: '';
-        margin-top: -225px;
-        padding-top: 225px;
-        display: block;
-    }
 }

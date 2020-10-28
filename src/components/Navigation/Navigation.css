@@ -9,6 +9,7 @@ nav {
   width: 100%;
   background-color: #181818;
   border-bottom: 1px solid #333;
+  cursor: default;
 }
 
 .nav-button-clicked {
@@ -36,7 +37,6 @@ nav {
   text-align: center;
   font-size: 1rem;
   background-color: inherit;
-  color: #fff;
   opacity: 0.8;
 }
 
@@ -85,6 +85,8 @@ nav {
 @media only screen and (max-width: 1500px) {
   nav {
     height: 200px;
+    grid-template-columns: auto 0.19fr 0.5fr 0.19fr auto;
+
   }
 
   .nav-sections {

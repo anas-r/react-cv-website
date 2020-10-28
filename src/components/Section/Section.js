@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Entry } from "./Entry";
-import VisibilitySensor from "react-visibility-sensor";
+import {
+  Element,
+} from "react-scroll";
 import "./Section.css";
 
-export const Section = ({ data, onChangeSection }) => {
+export const Section = ({ data }) => {
   return (
-    <VisibilitySensor onChange={(isVisible) => {isVisible && onChangeSection(data.id)}}>
-      <motion.section className="cv-section" id={data.id}>
+      <Element className="cv-section" id={data.id}>
         <motion.header
           className="cv-section-title"
           whileHover={{
@@ -22,7 +23,6 @@ export const Section = ({ data, onChangeSection }) => {
           ? data.entries.map((entry,i) => <Entry entryInfo={entry} key={i} id={data.id+i}/>)
           : ""}
           </motion.div>
-      </motion.section>
-    </VisibilitySensor>
+      </Element>
   );
 };
