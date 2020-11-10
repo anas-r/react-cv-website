@@ -18,10 +18,10 @@ function App() {
       />
       <motion.main>
         <Introduction />
-        {sectionsConfig.map((section) => (
+        {sectionsConfig.map((section,i) => (
           <>
           <Section data={section} />
-          <motion.div className="section-separator" style={{height: "0px"}} />
+          <motion.div className="section-separator" style={{height: "0px"}} key={i} />
           </>
         ))}
       </motion.main>

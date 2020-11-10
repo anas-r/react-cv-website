@@ -1,13 +1,61 @@
 footer {
-    --footer-height: calc(90px*0.618);
-    height: var(--footer-height);
-    display: flex;
-    width: 100%;
-    margin-top: calc(0.618*var(--footer-height));
-    border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-footer::after {
-    content: 'Work In Progress';
-    margin: auto;
+footer > div:nth-child(0n + 2) {
+  margin: auto auto 5px auto;
+  border-top: 2px solid rgb(102, 102, 102);
+  padding-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+footer > div:nth-child(0n + 3) {
+  margin: 5px auto auto auto;
+  font-weight: 900;
+  padding-bottom: 30px;
+}
+
+footer a,
+footer a:visited,
+footer a:link,
+footer a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-padder {
+  height: 610px;
+  background: linear-gradient(
+    0deg,
+    rgba(50, 116, 116, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.dont-hesitate::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 2px solid white;
+  transform-origin: left;
+  transition: all 0.5s;
+}
+
+.dont-hesitate:hover::after {
+  transform: scaleX(0);
+  transition: all 0.5s;
+}
+
+@media only screen and (max-width: 1500px) {
+  footer {
+    margin-top: calc(0.618 * var(--footer-height) + 290px);
+  }
 }

@@ -8749,6 +8749,11 @@ react-lorem-ipsum@^1.4.7:
   resolved "https://registry.yarnpkg.com/react-lorem-ipsum/-/react-lorem-ipsum-1.4.7.tgz#9fdbd061f8b4b75acc9b3af4c1101f1389471a94"
   integrity sha512-rmzsK9IIlrraXu5fjy9AScbSgo7d4zsbZ5EamRHNkbauTa/WfbhjwxXP1dsuoOT6AVbvxoTQzxZNqdYRWoG3Mw==
 
+react-obfuscate@^3.6.8:
+  version "3.6.8"
+  resolved "https://registry.yarnpkg.com/react-obfuscate/-/react-obfuscate-3.6.8.tgz#31deede7ad8e69672165ec38b4d662135c6bdb5f"
+  integrity sha512-Pc47sbOJEGqOQ65y22ZFwCGHlSwGn0tykl+sQ64wHy/ALcyZxK6zsNYD8Fp3YBcU2EhmJPSKR7BypBYtnAqqyA==
+
 react-router-dom@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"

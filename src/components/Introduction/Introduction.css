@@ -3,12 +3,22 @@
   color: #fff;
   padding-top: 125px;
   padding-left: 15px;
-  margin-bottom: 65px;
   cursor: default;
 }
 
 .introduction img {
   border-radius: 150px;
+  transition: all 0.3s;
+}
+
+.introduction-img-scrolled {
+  position: fixed;
+  top: 13px;
+  left: 14%;
+  z-index: 2;
+  height: 64px;
+  width: 64px;
+  transition: all 0.3s;
 }
 
 .introduction section {
@@ -38,8 +48,8 @@
 }
 
 .introduction-status::before,
-.introduction-pulse::before{
-  content: '';
+.introduction-pulse::before {
+  content: "";
   display: inline-block;
   height: 12px;
   width: 12px;
@@ -48,14 +58,14 @@
   background-color: rgb(51, 122, 42);
 }
 
-.introduction-pulse::before{
-  background-color: rgba(51, 122, 42,0);
+.introduction-pulse::before {
+  background-color: rgba(51, 122, 42, 0);
 }
 
 .introduction-status,
 .introduction-pulse {
   width: fit-content;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 5px 15px;
   border-radius: 20px;
   background-color: rgba(138, 138, 138, 0.25);
@@ -64,6 +74,12 @@
 @media only screen and (max-width: 1500px) {
   .introduction {
     padding-top: 235px;
+  }
+
+  .introduction-img-scrolled {
+    height: 94px;
+    width: 94px;
+    top: 53px;
   }
 }
 
@@ -74,5 +90,13 @@
 
   .introduction > img {
     margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .introduction-img-scrolled {
+    height: 64px;
+    width: 64px;
+    top: 68px;
   }
 }

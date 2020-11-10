@@ -1,6 +1,9 @@
 .cv-section {
     margin-left: 25px;
     margin-right: 25px;
+    margin-top: 115px;
+    padding-top: 115px;
+    margin-bottom: -115px;
     cursor: default;
 }
 
@@ -33,5 +36,13 @@
 }
 
 .cv-section-title:hover::after {
-    content: ' >';
+    content: ' »';
+}
+
+@media only screen and (max-width: 1500px) {
+    .cv-section {
+        margin-top: 225px;
+        padding-top: 225px;
+        margin-bottom: -225px;
+    }
 }

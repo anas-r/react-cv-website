@@ -111,8 +111,8 @@ export const sectionsConfig = [
     entries: [
       {
         title: "Science de données",
-        description: "Machine Learning (apprentissage automatique supervisé et non supervisé), techniques d'analyse des données",
-        keywords: ["Regression","Clustering","Bayesian_Classifiers","Support_Vector_Machines","Decision_Trees"]
+        description: "Machine Learning (apprentissage automatique supervisé et non supervisé), techniques d'analyse des données, métamodélisation et optimisation",
+        keywords: ["Regression","Clustering","Bayesian_Classifiers","Support_Vector_Machines","Decision_Trees","CNNs", "Optimisation"]
       },
       {
         title: "génie logiciel",
@@ -127,8 +127,8 @@ export const sectionsConfig = [
       {
         title: "Web sémantique",
         description: "Problématiques d'nteropérabilité entre services web, modélisation des connaissances et ontologies.",
-        keywords: ["Regression","Clustering","Bayesian_Classifiers","Support_Vector_Machines","Decision_Trees"]
-      },
+        keywords: ["Ontologies","Web_semantics","RDF","Linked_Data","JSON","XML"]
+      }
     ],
   },
   {

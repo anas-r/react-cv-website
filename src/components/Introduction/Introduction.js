@@ -1,12 +1,25 @@
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import React, {useState, useEffect} from "react";
 import MyIMG from "../../me.png";
 import "./Introduction.css";
 
-export const Introduction = () => {
+export const Introduction = () => {  
+  const {scrollYProgress} = useViewportScroll();
+  const [scrolled,setScrolled] = useState(false);
+  useEffect(() => scrollYProgress.onChange(latest => {latest > 0.1 ? setScrolled(true) : setScrolled(false)}))
   return (
     <motion.div className="introduction">
-      <img src={MyIMG} alt="Mon portfolio" height="250px" width="250px" />
+      <motion.img
+        src={MyIMG}
+        className={
+          (scrolled
+            ? "introduction-img-scrolled"
+            : "")
+        }
+        alt="Mon portfolio"
+        height="250px"
+        width="250px"
+      />
       <motion.section>
         <motion.header
           whileHover={{
@@ -16,7 +29,7 @@ export const Introduction = () => {
         >
           Bonjour
         </motion.header>
-        <motion.p style={{ width: "90%" }}>
+        <motion.p style={{ width: "95%" }}>
           Je suis{" "}
           <motion.span style={{ fontWeight: "900" }}>Anas Rachyd</motion.span>,
           étudiant en dernière année de formation à{" "}
@@ -29,8 +42,7 @@ export const Introduction = () => {
           </motion.span>{" "}
           (BAC+5). De l'intelligence artificielle à la science de données, je
           suis largement sensibilisé aux métiers du digital pour faire face aux
-          enjeux d'un monde en transition numérique. Sur ce site web, conçu à
-          100% par moi, vous trouverez les grandes lignes de mon parcours.
+          enjeux d'un monde en transition numérique. À travers ce site web, conçu par moi-même, vous trouverez les grandes lignes de mon parcours.
         </motion.p>
         <motion.p style={{ marginTop: "5px" }}>Bonne visite !</motion.p>
         <motion.div
@@ -51,44 +63,46 @@ export const Introduction = () => {
             À la recherche d'un stage de fin d'études à partir du mois d'avril
             2021
           </motion.div>
-          <motion.div
-            className="introduction-pulse"
-            style={{
-              color: "rgba(0,0,0,0)",
-              backgroundColor: "#fff",
-              position: "absolute",
-              top: "-10px",
-              zIndex: "-1",
-            }}
-
-            animate={{
-              scaleY: [1,1.65,1],
-              scaleX: [1,1.04,1],
-              opacity: [0.15,0,0.15],
-              filter: ["blur(0)","blur(2px)","blur(0)"]
-            }}
-
-            transition= {{
-              repeat: Infinity,
-              duration: 2.5
-            }}
-          >
-            <motion.span
-              style={{
-                textTransform: "uppercase",
-                fontWeight: "700",
-                fontSize: "0.9rem",
-                margin: "0 5px",
-                color: "rgba(0,0,0,0)",
-              }}
-            >
-              actuellement:
-            </motion.span>
-            À la recherche d'un stage de fin d'études à partir du mois d'avril
-            2021
-          </motion.div>
+          <Pulse delay={0} scale={0.8} />
         </motion.div>
       </motion.section>
     </motion.div>
   );
 };
+
+const Pulse = ({ delay, scale }) => (
+  <motion.div
+    className="introduction-pulse"
+    style={{
+      color: "rgba(0,0,0,0)",
+      backgroundColor: "#fff",
+      position: "absolute",
+      top: "-20px",
+      zIndex: "-1",
+    }}
+    animate={{
+      scaleX: [1, 1 + scale / 15],
+      scaleY: [1, 1 + scale],
+      opacity: [0.2, 0],
+      filter: ["blur(0)", "blur(5px)"],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 1.5,
+      delay: delay,
+    }}
+  >
+    <motion.span
+      style={{
+        textTransform: "uppercase",
+        fontWeight: "700",
+        fontSize: "0.9rem",
+        margin: "0 5px",
+        color: "rgba(0,0,0,0)",
+      }}
+    >
+      actuellement:
+    </motion.span>
+    À la recherche d'un stage de fin d'études à partir du mois d'avril 2021
+  </motion.div>
+);

@@ -26,6 +26,7 @@ nav {
     rgba(75, 172, 181, 1) 0%,
     rgba(0, 212, 255, 1) 100%
   );
+  cursor: pointer;
 }
 
 .nav-button-unclicked {
@@ -38,6 +39,7 @@ nav {
   font-size: 1rem;
   background-color: inherit;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .nav-logo {
@@ -85,7 +87,7 @@ nav {
 @media only screen and (max-width: 1500px) {
   nav {
     height: 200px;
-    grid-template-columns: auto 0.19fr 0.5fr 0.19fr auto;
+    grid-template-columns: auto 0.19fr 0.45fr 0.19fr auto;
 
   }
 
@@ -96,5 +98,11 @@ nav {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     grid-row-gap: 2px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .nav-logo,
+  .social-link-wrapper {
+    opacity: 0;
   }
 }
